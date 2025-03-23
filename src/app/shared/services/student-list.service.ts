@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Student } from '../../shared/models/student.model';
+import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Ex02StudentListService {
+export class StudentListService {
 
   getStudents(): Observable<{ data: Student[] }> {
     const response: { data: Student[] } = {
