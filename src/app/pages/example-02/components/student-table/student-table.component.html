@@ -1,0 +1,27 @@
+<table class="student-table student-table-{{theme}}">
+
+    <thead class="student-table-header">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Professor</th>
+            <th>Disciplina</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let student of studentList; trackBy: trackByStudent">
+            <td>{{ student.name }}</td>
+            <td>{{ student.birth | age }}</td>
+            <td>{{ student.teacher_name }}</td>
+            <td>{{ student.school_subject }}</td>
+        </tr>
+    </tbody>
+
+    <tfoot class="student-table-footer">
+        <tr>
+            <td colspan="4">Total de alunos: {{ studentList.length }}</td>
+        </tr>
+    </tfoot>
+
+</table>

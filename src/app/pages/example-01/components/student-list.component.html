@@ -1,0 +1,60 @@
+<section class="student-list">
+
+    <h2>
+        Exemplo 01
+    </h2>
+
+    <p>
+        Neste exemplo, foi mantido o ng-template e adicionado um bind (let-theme) no contexto do template.
+        Este bind é utilizado para alterar a cor da tabela de acordo com o valor passado. O valor passado é
+        definido no momento da chamada do ng-template, e utilizado para definir o tema da tabela.
+        Os temas estão definidos no arquivo student-list.component.scss.
+        <br>
+        <br>
+        Utilizei uma condição para definir o tema da tabela, apenas para demonstrar que é possível utilizar qualquer
+        tipo de lógica para definir o tema da tabela.
+    </p>
+
+    <ng-container
+        [ngTemplateOutlet]="studentListTemplate"
+        [ngTemplateOutletContext]="{ students, theme: students.length >= 4 ? 'gray' : 'red' }"
+    ></ng-container>
+
+    <hr>
+
+    <ng-container
+        [ngTemplateOutlet]="studentListTemplate"
+        [ngTemplateOutletContext]="{ students, theme: students.length < 4 ? 'gray' : 'red' }"
+    ></ng-container>
+
+</section>
+
+<ng-template #studentListTemplate let-studentList="students" let-theme="theme">
+    <table class="student-table student-table-{{theme}}">
+
+        <thead class="student-table-header">
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Professor</th>
+                <th>Disciplina</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let student of studentList; trackBy: trackByStudent">
+                <td>{{ student.name }}</td>
+                <td>{{ student.birth | age }}</td>
+                <td>{{ student.teacher_name }}</td>
+                <td>{{ student.school_subject }}</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="student-table-footer">
+            <tr>
+                <td colspan="4">Total de alunos: {{ studentList.length }}</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</ng-template>

@@ -1,0 +1,41 @@
+.student-list {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+hr {
+    margin: 20px 0;
+
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+
+    padding: 2px 10px;
+
+    border: 1px solid #ddd;
+}
+
+.student-table {
+    border-collapse: collapse;
+}
+
+.student-table-header {
+    background-color: #eaeaea;
+}
+
+.student-table-gray .student-table-footer td {
+    background-color: #ddd;
+}
+
+.student-table-red .student-table-footer td {
+    background-color: #ff0000;
+}

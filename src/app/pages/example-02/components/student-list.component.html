@@ -1,0 +1,29 @@
+<section class="student-list">
+
+    <h2>
+        Exemplo 02
+    </h2>
+
+    <p>
+        Neste exemplo, foi separado as responsabilidades de exibição da tabela em um componente.
+        O componente recebe a lista de alunos e o tema da tabela, e exibe a tabela de acordo com o tema.
+        Na minha visão, este é o melhor exemplo, pois mantém a responsabilidade de exibição da tabela
+        no componente, e permite a reutilização do mesmo.
+        Com relação ao tema, a ideia é a mesma do exemplo anterior, porém, ao invés de utilizar um ng-template,
+        foi utilizado um componente onde os binds são realizados por inputs do componente.
+        O resultado é o mesmo, porém a manutenção do código deste exemplo é mais ágil.
+    </p>
+
+    <app-student-table
+        [theme]="students.length >= 4 ? 'gray' : 'red'"
+        [studentList]="students"
+    ></app-student-table>
+
+    <hr>
+
+    <app-student-table
+        [theme]="students.length < 4 ? 'gray' : 'red'"
+        [studentList]="students"
+    ></app-student-table>
+
+</section>

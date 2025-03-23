@@ -1,0 +1,17 @@
+.student-list {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+hr {
+    margin: 20px 0;
+
+    border: 1px solid #ddd;
+}
