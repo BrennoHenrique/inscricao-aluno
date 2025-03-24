@@ -11,6 +11,12 @@ export const routes: Routes = [
     },
     {
         path: "**",
-        redirectTo: "example-01"
+        redirectTo: "example-01",
+        pathMatch: "full"
+    },
+    {
+        path: "",
+        redirectTo: "example-01",
+        pathMatch: "full"
     }
 ];
